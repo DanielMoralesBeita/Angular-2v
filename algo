@@ -1,0 +1,448 @@
+
+Documento de diseño
+Proyecto: 
+Sistema de Matricula Responsiva TEC
+Tabla de contenido
+Importancia del proyecto	5
+Objetivo	6
+Que es SEO	8
+Evaluación con google PageSpeed Insights móvil	11
+Revisión de la W3C	13
+Análisis de Eliminación de cajas de dialogo	14
+Ventajas	14
+Análisis de diseño de los cajas de dialogo sobre el sitio web	14
+Desventajas de utilizar JavaScript de la generación dinámica del sitio	14
+Recomendación	15
+Para la tabulación del contenido (Bootstrap)	15
+Introducción	15
+Opciones de cuadrícula	16
+Ejemplo	16
+Soporte de navegadores de Bootstrap	18
+Dispositivos móviles	18
+Navegadores de escritorio	19
+API del acordeón	19
+Colapso collapse.js	19
+Plugin de dependencia	19
+Accesibilidad en el control	20
+Uso	20
+Habilitar manualmente con:	21
+Eventos	21
+API pestañas	22
+Barra de navegación (ScrollSpy scrollspy.js)	22
+Uso	22
+Requiere Bootstrap nav	22
+ID objetivos requieren resolubles	22
+Requiere posicionamiento relativo	23
+A través de los atributos de datos	23
+Modales modal.js	24
+Modales abiertas múltiples no son compatibles	24
+La colocación de marcas modal	24
+Advertencias de dispositivos móviles	24
+Hacer accesible modales	25
+Uso personalizado en JavaScript	25
+Análisis del google analytics	25
+Navegadores y sistemas operativos y Resoluciones	25
+Chrome	26
+360 X 640 pixeles (Móvil) y 768 a 991  pixeles (Móvil)	26
+OIS	26
+Android	26
+992 mayor o igual a 992 (Escritorio)	26
+Windows	26
+Safari	26
+Firefox	27
+360 X 640 pixeles (Móvil) y 768 a 991  pixeles (Móvil)	27
+OIS	27
+Android	27
+992 mayor o igual a 992 (Escritorio)	27
+Windows	27
+Internet Explorer	27
+992 mayor o igual a 992 (Escritorio)	28
+Windows	28
+Edge	28
+992 mayor o igual a 992 (Escritorio)	28
+Windows	28
+Estrategia de Pruebas para los navegadores y resoluciones	28
+Pruebas con web driver Selenium	28
+Pruebas en dispositivos reales	28
+Pruebas con el emulador de Chrome	28
+Nuevos usuarios	29
+Uso de navegadores	30
+Propuesta de diseño personalizado	31
+Botones Actuales	31
+Botones Propuestos	32
+Resoluciones	33
+Modificación de la guía de ayuda	34
+Análisis de API para calendario manejo de horario	34
+Google Calendar API	34
+Autorización	34
+Ejemplo de uso	34
+Consultar eventos	35
+Insertar eventos	35
+Eliminar eventos	35
+Ventajas	36
+Desventajas	36
+Librería para pdf en JavaScript jsPDF	36
+Compatibilidad del navegador	36
+Soporte de codificación	36
+Construcción manual del horario	37
+Bibliografía	38
+Bob Martin. (2016), The Principles of OOD, 11 de Agosto de 2016, de butunclebob sitio web: http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod .	38
+Bootstrap. (2016), Carousel carousel.js, 12 de Agosto de 2016, de Bootstrap sito web: http://getbootstrap.com/javascript/#carousel .	38
+Bootstrap. (2016), Collapse collapse.js, 12 de Agosto de 2016, de Bootstrap sito web: http://getbootstrap.com/javascript/#collapse .	38
+Bootstrap. (2016), Modals modals.js, 12 de Agosto de 2016, de Bootstrap sito web: http://getbootstrap.com/javascript/#modals .	38
+Bootstrap. (2016), ScrollSpy scrollspy.js, 12 de Agosto de 2016, de Bootstrap sito web: http://getbootstrap.com/javascript/#scrollspy .	38
+Google. (2016). Authentication using the Google APIs Client Library for JavaScript, 19 de Agosto de 2016,  de google sitio web: https://developers.google.com/api-client-library/javascript/features/authentication .	38
+Google. (2016). Dispositivos, 22 de Agosto 2016, Analytics Todos los datos de sitios web Dispositivos 20160722-20160821.pdf.	38
+Google. (2016). Google Calendar API, 12 de Agosto de 2016,  de google sitio web: https://developers.google.com/google-apps/calendar/create-events.	39
+Google. (2016). Navegador y SO, 22 de Agosto 2016, Analytics Todos los datos de sitios web Navegador y SO 20160722-20160821.pdf.	39
+Google. (2016). Navegador y SO, 22 de Agosto 2016, Analytics Todos los datos de sitios web Navegador y SO 20160723-20160822.pdf.	39
+Google. (2016). Navegador y SO, 22 de Agosto 2016, Analytics Todos los datos de sitios web Navegador y SO 20160724-20160823.	39
+Google. (2016). Páginas, 22 de Agosto 2016, Analytics Todos los datos de sitios web Páginas 20160723-20160822.pdf.	39
+Google. (2016).JavaScript Quickstart, 22 de Agosto de 2016,  de google sitio web:  https://developers.google.com/google-apps/calendar/quickstart/js .	39
+James Hall (2010-2016), jsPDF, 22 de Agosto 2016, de Github sitio web: https://github.com/MrRio/jsPDF .	39
+Jo Rabin, mTLD Mobile Top Level Domain (dotMobi) Charles McCathieNevile, Opera Software [Early Drafts]. (2008). Mobile Web Best Practices 1.0. 17 de Agosto de 2016, de W3C Sitio web: https://www.w3.org/TR/mobile-bp .	39
+Opera. (2016). Opera version history, 24 de Agosto 2016, de Opera sitio web: http://www.opera.com/docs/history/ .	39
+W3C. (2015). JavaScript best practices. 11 de Agosto de 2016, de W3C sitio web: https://www.w3.org/wiki/JavaScript_best_practices .	40
+w3schools. (2016). Bootstrap Carousel, 24 de Agosto 2016, de w3school sitio web: http://www.w3schools.com/bootstrap/bootstrap_carousel.asp .	40
+w3schools. (2016). Bootstrap JS Collapse, 12 de Agosto de 2016, de w3schools sito web: http://www.w3schools.com/bootstrap/bootstrap_ref_js_collapse.asp .	40
+w3schools. (2016). Bootstrap Modal Plugin, 11 de Agosto de 2016, de w3schools sitio web: http://www.w3schools.com/bootstrap/bootstrap_modal.asp .	40
+w3schools. (2016). Bootstrap Scrollspy Plugin (Advanced), 12 de Agosto de 2016, de w3schools sito web: http://www.w3schools.com/bootstrap/bootstrap_scrollspy.asp .	40
+w3schools. (2016). Google Maps Controls, 24 de Agosto 2016, de w3school sitio web: http://www.w3schools.com/googleapi/google_maps_controls.asp .	40
+w3schools. (2016). How To Create a Modal Box, 11 de Agosto de 2016, de w3schools sitio web: http://www.w3schools.com/howto/howto_css_modals.asp .	40
+
+
+Importancia del proyecto
+En la actualidad las personas que cuentan con un dispositivo móvil es bastante elevada en Costa Rica y sus facilidades para conseguir han hecho que la gran mayoría cuente con al menos un dispositivo móvil, que no es lo mismo que un ordenador de escritorio o un ordenador portátil ya que esta por sus características es más difícil de adquirir y sobre todo menos portable que un dispositivo móvil.
+Es en este punto donde toma importancia en el diseño web responsivo ya que el mercado actual demanda entrar desde cualquier dispositivo a la web para navegar en los sitios que se escojan, en el caso del sistema de matrícula, la gama de dispositivos móviles ha crecido tanto, que ha provocado un aumento en el uso del sistema de matrícula desde un dispositivo móvil, esto a pesar de no ser un sitio responsivo.
+El tiempo que le toma al realizar la matrícula al usuario es de suma importancia y esto no debería verse afectado por el hecho de haber accedido desde un dispositivo móvil, por lo cual de la mano con el diseño responsivo se tiene la tarea de que el sistema de matrícula  sea sencillo, ligero, que cargue de la forma más rápida posible y que cuente con interfaces lo menos recargadas posibles, así de esta forma se mejora la experiencia al usuario.
+Los datos proporcionados por el google analytics han sido de mucha ayuda, ya que se puede obtener  los navegadores, los sistemas operativos, las resoluciones de pantalla  de los dispositivos con los que entran los usuarios al sistema de matrícula.
+Se realizó una pequeña evaluación  del sitio web en la página de http://tec-appsext.itcr.ac.cr/Matricula/frmAutenticacion.aspx esto con el fin de obtener datos para saber la optimización del sistema actualmente y el seguimiento de estándares.
+
+Objetivo
+El objetivo es realizar un  sistema de matrícula responsivo, el cual va a tener un alcance definido por la información aportada del google analytics en cuanto a soporte de dispositivos, navegadores y resoluciones de pantalla además de los requerimientos que puedan surgir en el proyecto como rediseño del sitio o rediseño de comportamientos del mismo sin alterar su funcionalidad.   
+
+
+
+
+
+
+
+
+
+
+
+
+
+Que es SEO
+   
+Como se observa en la imagen vienen varios puntos, los cuales vamos a ir comentando a continuación: 
+1)	La estructura semántica del sitio web, según SEO Basics las estructuras en el contenido de la página web deben de ser correctas, esto con el fin de que se pueda saber de qué se trata la página las palabras claves del contenido web.
+2)	La estructura de navegación de la página web, generalmente se realiza de acuerdo a Improving Site Struture, esto se hace con el fin de establecer los enlaces o bien mapas de contenido en una misma página, esto con el ideal de no ser accedidos mediante alguna otra forma. 
+3)	La optimización de contenido, esto mediante el “Optimization Content” el cual establece que se debe realizar una página eficiente con la carga de imágenes, CSS y librerías de JavaScript. Esto con el fin de ofrecer servicio y contenido de calidad para acceder al sitio web de forma rápida.
+4)	La optimización de link para procesos de búsqueda, esto mediante la estrategia “Dealing Crawlers”, esto con el fin de que el robot de google spider no se pierda por link que no debería de navegar y demás, establecer un robot.txt para que la araña de búsqueda que se guie en su proceso.
+
+Si existen 2 sitios con la misma funcionalidad pero con apariencia distinta, existe una diferencia en el SEO, ya que el robot de google cambia como se muestra en la siguiente imagen. Esto solo en el caso de tener 2 sitios para el sistema de matrícula.
+  
+El SEO se implementa con el fin de que nuestro sistema web aparezca entre las primeras búsquedas de Google, si se mejora en el SEO se mejora en la optimización del sitio.
+Aparte de la implementación del SEO, tenemos herramientas como Google Analytics para obtener estadísticas, resultados y consumo de nuestro sistema web. 
+Evaluación con google PageSpeed Insights móvil
+PageSpeed Insights mide el rendimiento de las páginas para dispositivos móviles y para ordenadores. Obtiene la URL dos veces, una vez con un agente de usuario para móviles, y otra con un agente de usuario para ordenadores.
+La puntuación de PageSpeed va de 0 a 100 puntos. Cuanta más alta sea la puntuación, mejor. 
+  
+Esta sería la velocidad actual desde un dispositivo móvil, desde la perspectiva de optimización, midiendo solo la entrada al sistema.
+   
+Esta sería lo que es propiamente para la parte responsiva del sitio web que no se puede leer en el sitio actualmente.
+Estos serían los criterios aprobados por la herramienta:
+
+  
+  
+Revisión de la W3C
+Son los estándares de la web en general, el seguimiento de un estándar proporciona calidad y la forma práctica de aplicar el estándar seria con el validador 
+De la w3c que se encuentra en https://validator.w3.org/mobile/
+  
+Análisis de Eliminación de cajas de dialogo
+Según los estándares de la W3C no se debería de hacer uso de las cajas de dialogo para dispositivos móviles ya que simplemente existen dispositivos que no soportan esta función de forma adecuada. 
+Ventajas 
+Se obtiene un mejor rendimiento de la página web una vez cargada, ya que no realizar Request solo los realiza una única vez.
+Análisis de diseño de los cajas de dialogo sobre el sitio web 
+ La mayoría del sitio web en su interfaz trabaja sobre JavaScript, por lo cual un cambio en este modifica el HTML que se muestra en las cajas de dialogo, la mayor parte del sitio se genera dinámicamente mediante JavaScript.
+Desventajas de utilizar JavaScript de la generación dinámica del sitio 
+1)	Mantenibilidad, se requiere una curva de aprendizaje, se requiere tener un estricto orden en el JavaScript y que se divida para su compresión aplicando principios de SOLID para una mejor comprensión, ya que si se cambia el HTML se cambia el JavaScript.
+1)	Al ser generado el HTML es difícil generar software para probarlo en fases de desarrollo, mediante herramienta de validación de estándares, ya que solo puede hacerse mediante pruebas manuales.
+2)	La w3c no recomienda el uso de estos ya que algunos dispositivos móviles solo soportan una ventana lo cual podría ocasionar que ciertos dispositivos móviles no puedan acceder 
+
+Recomendación
+Si fuera posible sería recomendable eliminar las cajas de dialogo en su gran mayoría y utilizar otros métodos de navegación por el sistema de matrícula. 
+Para la tabulación del contenido (Bootstrap)
+Bootstrap incluye un primer sistema de respuesta, móvil fluido de Cuadrícula que escala apropiada hasta 12 columnas como el dispositivo o en la ventana gráfica que aumenta el tamaño.
+Introducción
+El sistema de Cuadrícula (Grid System), se utilizan para crear diseños de página a través de una serie de filas y columnas que albergan su contenido. He aquí cómo funciona el (Grid System):
+1.	Las filas deben ser colocados dentro de un .container (ancho fijo) o .container-fluid (ancho completo) para la colocación apropiada de los elementos.
+2.	El contenido debe ser colocado dentro de las columnas y columnas sólo puede ser hijos inmediatos de filas.
+3.	Clases de cuadrícula predefinidos como .row y .col-xs-4están disponibles para hacer rápidamente diseños de cuadrícula.
+4.	Columnas crean las canaletas (brechas entre el contenido de la columna) a través padding. Que el relleno se compensa en las filas de la primera y la última columna a través de margen negativo  
+5.	Es por lo que el contenido dentro de columnas de la cuadrícula está alineada con contenido que no sea de la red.
+6.	Si hay más de 12 columnas se colocan dentro de una sola fila, cada grupo de columnas adicionales será, como una unidad, envuelva en una nueva línea.
+Opciones de cuadrícula
+La regla @media se utiliza para definir diferentes reglas de estilo para diferentes tipos / dispositivos de medios, estos son la clave en para crear los puntos de ruptura que conforman el  (Grid System).
+Ejemplo
+/* Extra small devices (phones, less than 768px) */ /* No media query since this is the default in Bootstrap */ /* Small devices (tablets, 768px and up) */ @media (min-width: @screen-sm-min) { ... } /* Medium devices (desktops, 992px and up) */ @media (min-width: @screen-md-min) { ... } /* Large devices (large desktops, 1200px and up) */ @media (min-width: @screen-lg-min) { ... }
+
+
+
+@media (max-width: @screen-xs-max) {...} @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {...} @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {...} @media (min-width: @screen-lg-min) {...}
+
+  
+
+
+
+
+
+
+Representación gráfica del sistema de columnas 
+  
+Soporte de navegadores de Bootstrap
+Bootstrap se concentra en el soporte a las últimas versiones de los navegadores, para los dispositivos móviles, pero algunas versione de estos navegadores no están soportadas de forma explícita por el Bootstrap, además de navegadores proxys tampoco están soportados como (Opera Mini, Opera Mobile's Turbo mode, UC Browser Mini, Amazon Silk).
+Dispositivos móviles
+	Chrome	Firefox	Safari
+Android	 Soportado	   Soportado	N/A
+iOS	 Soportado	   Soportado	 Soportado
+
+
+
+
+
+Navegadores de escritorio
+	Chrome	Firefox	Internet Explorer	Opera	Safari
+Mac	 Soportado	   Soportado	N/A	 Soportado	 Soportado
+Windows	 Soportado	   Soportado	 Soportado	 Soportado	 No Soportado
+
+Para habilitar el modo de compatibilidad en el IE, para las versiones de navegadores de Windows.
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+API del acordeón 
+Colapso collapse.js
+Complemento flexible que  se utiliza para el control (mostrar / ocultar) el contenido plegable.
+Plugin de dependencia
+Reducir requiere las transiciones de plug-in para ser incluido en su versión de Bootstrap.
+1)	.collapse esconde el contenido
+2)	.collapsing se aplica durante las transiciones
+3)	.collapse.in muestra el contenido
+Puede utilizar un enlace con el href atributo o un botón con el data-target atributo. En ambos casos, el data-toggle="collapse" se requiere.
+
+Accesibilidad en el control 
+Se  añade el aria-expanded al elemento de control. Este atributo define explícitamente el estado actual del elemento plegable a los lectores de pantalla y tecnologías de apoyo similares. Si el elemento plegable está cerrado de forma predeterminada, debe tener un valor de aria-expanded="false". Si ha configurado el elemento plegable para ser abierta por defecto  se usa, aria-expanded="true" en el  su lugar. El plugin cambiará automáticamente este atributo en función de si o no el elemento plegable se ha abierto o cerrado.
+
+Además, si su elemento de control está orientada a un solo elemento plegable - es decir, el data-target atributo está apuntando a un id  selector en CSS - se puede agregar un adicional de aria-controls atributo al elemento de control, que contiene el id del elemento plegable. Lectores de pantalla modernas tecnologías de apoyo y similares hacen uso de este atributo para proporcionar a los usuarios con accesos directos adicionales para navegar directamente al elemento plegable en sí.
+Uso
+A través de los atributos de datos data-toggle="collapse" y data-target al elemento para asignar automáticamente el control de un elemento plegable.
+ El data-target atributo acepta un selector CSS para aplicar el colapso.
+
+Para añadir la gestión de grupos de acordeón a un control plegable, añadir el atributo de datos data-parent="#selector".   
+A través de JavaScript
+Habilitar manualmente con:
+$('.collapse').collapse ()
+Eventos
+El colapso de la clase Bootstrap expone una serie de eventos para enganchar en funcionalidad de contracción.
+Tipo de evento	Descripción
+show.bs.collapse	Este evento se activa inmediatamente cuando el show se llama método de instancia.
+shown.bs.collapse	Este evento se activa cuando un elemento de colapso se ha hecho visible para el usuario (esperará a que las transiciones CSS para completar).
+hide.bs.collapse	Este evento se activa inmediatamente cuando el hide método ha sido llamado.
+hidden.bs.collapse	Este evento se activa cuando un elemento de collapse se ha ocultado por parte del usuario (esperará a que las transiciones CSS para completar).
+
+Ejemplo:
+$('#myCollapsible').on ('hidden.bs.collapse', function () {
+  // Do something…
+})
+API pestañas
+Barra de navegación (ScrollSpy scrollspy.js)
+El plug-in ScrollSpy es para la actualización automática de los objetivos de navegación basada en la posición de desplazamiento. Desplazar el área por debajo de la barra de navegación.
+Uso
+Requiere Bootstrap nav
+Scrollspy actualmente requiere el uso de un componente de navegación Bootstrap para poner de relieve adecuado de los enlaces activos.
+ID objetivos requieren resolubles
+Navbar enlaces deben tener objetivos id resolubles. Por ejemplo, una <a href="#home">home</a>debe corresponder a algo en el DOM como <div id="home"></div>.
+Requiere posicionamiento relativo
+No importa el método de aplicación, scrollspy requiere el uso de position: relative; en el elemento que está viendo. En la mayoría de los casos este es el <body>. Cuando scrollspying en otros elementos distintos del <body>, asegúrese de tener un heightset y overflow-y: scroll; aplicada.
+
+A través de los atributos de datos
+Para agregar fácilmente el comportamiento scrollspy a su navegación barra superior, añadir data-spy="scroll" al elemento que desea espiar a (más típicamente esta sería la <body>). A continuación, añadir el data-target atributo con el ID o la clase del elemento principal de cualquier Bootstrap .nav componente.
+ 
+API de para los modales
+
+Modales modal.js
+Modales de diálogo se realizan con la funcionalidad requerida mínima y los valores predeterminados inteligentes.
+Modales abiertas múltiples no son compatibles
+No se recomienda abrir un modal en otro modal. Mostrando más de un modal a la vez requiere código personalizado.
+La colocación de marcas modal
+Siempre trate de colocar el código HTML de un modal en una posición de nivel superior en el documento para evitar otros componentes que afectan a la apariencia y / o la funcionalidad de la caja de dialogo modal.
+Advertencias de dispositivos móviles
+Los teclados virtuales
+El uso de insumos dentro de un modal, iOS tiene un error de representación que no se actualiza la posición de los elementos fijos cuando se activa el teclado virtual. Unas pocas soluciones para este incluyen la transformación de sus elementos para position: absoluteo invocando un temporizador en el enfoque para tratar de corregir la posición manualmente.
+ Esto no es manejado por Bootstrap, por lo tendría que arreglarse si se usan estos modales.
+Hacer accesible modales
+Asegúrese de añadir role="dialog" y aria-labelledby="...", haciendo referencia al título modal, a .modal, y role="document" a la  .modal-dialog misma.
+Además, puede dar una descripción de su diálogo modal con aria-describedby el .modal.
+Uso personalizado en JavaScript
+$('#myModal').on ('shown.bs.modal', function () {$('#myInput').focus ()})
+Análisis del google analytics 
+Navegadores y sistemas operativos y Resoluciones
+ Esta es la lista de navegadores, sistemas operativos y resoluciones a las cuales se llegó el acuerdo de probar, además de sustentar la información con google analytics para el último año.
+Realizando pruebas responsivas solo en dispositivos móviles de 360X640 pixeles, las demás serian especificadas por dispositivos, de pruebas, que se elijan para probar y las resoluciones las cuales de momento son los puntos de quiebre: 768 pixeles de ancho, 991 pixeles de ancho, 992 pixeles de ancho como un mínimo para el resto de dispositivos, cabe mencionar que existen dispositivos que dependiendo de su inclinación vertical u horizontal el orden de los pixeles cambia, Por ejemplo: 360X640 pixeles se convertiría en 640X360 pixeles y así de esta forma con los dispositivos que se vayan a elegir. 
+La siguiente sección trae la siguiente distribución para las pruebas en el orden de Navegador, Resoluciones y sistemas operativos. 
+Para las versiones de los navegadores ya sería estrategia conjunta de hacer pruebas y ver que cambia de una versión a otra versión, para realizar el cambio correspondiente.
+Chrome
+El navegador Chrome es el que la mayoría de los usuarios utilizan.
+360 X 640 pixeles (Móvil) y 768 a 991  pixeles (Móvil)
+OIS
+Los usuarios de IOS en dispositivo utilizan el navegador Chrome. 
+Android
+En su gran mayoría utilizan Chrome.
+992 mayor o igual a 992 (Escritorio)
+Windows 
+Las pruebas para este punto se realizaran solo en la ventana del navegador de Windows, que se vea bien en la resolución de 992 pixeles.
+Safari
+Se recomienda para la última versión de los dispositivos que se vayan a probar, por definir.
+Solo se utiliza en OIS en las diferentes resoluciones, por lo cual las pruebas a este navegador solo se realizaran en dispositivos móviles entonces sus pruebas serian sobre 360 X 640 pixeles (Móvil), 768 a 991  pixeles (Móvil)
+992 mayor o igual a 992 (Escritorio).  
+Firefox
+En el caso de Firefox este navegador los usuarios que utilizan este navegador.
+360 X 640 pixeles (Móvil) y 768 a 991  pixeles (Móvil)
+OIS
+En el caso de OIS para este navegador en esta resolución no cuenta con visitas de usuarios, pero de igual forma se tomaría en cuenta.
+Android
+Existen usuarios de Android que usan este navegador. 
+992 mayor o igual a 992 (Escritorio)
+Windows 
+Las pruebas para este punto se realizaran solo en la ventana del navegador en Windows.
+ Internet Explorer
+Para este navegador solo se harán pruebas en la versión 11 del mismo.
+992 mayor o igual a 992 (Escritorio)
+Windows 
+Las pruebas para este punto se realizaran solo en la ventana del navegador en Windows.
+Edge
+992 mayor o igual a 992 (Escritorio)
+Windows 
+Las pruebas para este punto se realizaran solo en la ventana del navegador en  Windows.
+Estrategia de Pruebas para los navegadores y resoluciones 
+ Pruebas con web driver Selenium
+Pruebas automatizadas de UI con Selenium.
+Pruebas en dispositivos reales
+Se realizaran pruebas con dispositivos reales para ver su funcionamiento.
+Pruebas con el emulador de Chrome
+Se realizaran pruebas con el emulador de Chrome
+Nuevos usuarios
+En las nuevas sesiones destacan otros navegadores por lo cual no se pueden excluir los navegadores, se trata de cubrir la mayor gama posible de navegadores.
+  
+
+
+
+
+Uso de navegadores
+Actualmente los 8 primeros navegadores son Chrome, Safari, Firefox, Android Browser, Internet Explorer, Opera y Edge, pero solo le  dará soporte a Chrome, Safari, Firefox, Internet Explorer y Edge, esto por la razón de que   siguiendo con el resteo de los navegadores Android Browser es el navegador de que tiene por defecto cada dispositivo entonces si se quiere llegar a probar se tendría que probar cada dispositivo con cada versión lo cual traería un costo en las pruebas además de que la arquitectura de estos navegadores es muy similar a la Chrome, opera realmente en sus nuevas versiones tiene gran parte del core de Chromium por lo cual es bastante similar al Chrome y los otros navegadores no cuentan con una cuenta importante de uso para ser tomados en cuenta, sin embargo es posible que funcionen, pero no se toman en cuenta para el soporte. 
+  
+
+
+
+
+
+
+
+
+
+
+
+Propuesta de diseño personalizado
+En este punto se pretende crear una propuesta de diseño para los componentes actuales del sitio web, creando como la base de maquetación para los componentes de la misma, por cada requerimiento por ejemplo:
+Botones Actuales
+    
+Css	
+1.	font-family: Helvetica,Arial,sans-serif;
+2.	font-size: 12px;
+3.	border: 1px solid #164999;
+4.	background: #164999 url(../images/ui-bg_highlight-hard_40_164999_1x100.png) 50% 50% repeat-x;
+5.	font-weight: bold;
+6.	color: #ffffff; 
+ 
+Botones Propuestos
+  
+Los botones no cuentan con imágenes solo con iconos y trabajan bajo el Framework de Bootstrap y estilos sobrescritos.
+CSS
+Por ejemplo el Hover
+ 
+Para estilo normal del botón 
+ 
+
+
+
+
+
+
+
+
+
+
+
+Resoluciones 
+
+	Tamaño de letra	Tipo de letra 
+360 X 640 pixeles dispositivos móviles.	font-size: 14px	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+768 a 991  pixeles de ancho  tabletas.	font-size: 14px	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+992 mayor o igual a 992 pixeles  de ancho escritorio.
+	font-size: 14px	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+Modificación de la guía de ayuda 
+La guía de ayuda actual se modificara para incluir el nuevo diseño del sitio.
+Análisis de API para calendario manejo de horario
+Google Calendar API
+Esta API realiza sus operaciones mediante Request, con elementos específicos de llamados, se implementaría el API de JavaScript por estar en el lado del cliente no implica un costo en el servidor. 
+Autorización 
+Necesita tener la cuenta de google darle permisos, para acceder a esta cuenta para configuración del Api de JavaScript. 
+Ejemplo de uso
+http://tecmatriculas.neocities.org/ip.html
+ 
+Consultar eventos
+Si no se cuenta con la aplicación de google para ver los eventos estos también se pueden consultar mediante una lista, que obtiene una cantidad de elementos para el calendario y filtrar la fecha mínima y máxima.
+Insertar eventos
+Los eventos del google calendar se pueden insertar mediante una llamada al servidor, con el uso del API, se puede configurar alarmas, localización en Google Maps y recordatorios  a un correo.
+Eliminar eventos
+Los eventos se eliminan mediante un único id de evento, generado por la aplicación por lo cual para nosotros sería el nombre o la descripción del evento generado en el caso de la matrícula de un curso. 
+Ventajas
+•	Permite un fácil manejo del calendario.
+•	Permite dar la ubicación de un evento.
+Desventajas 
+•	Se tiene que tener una cuenta de google asociada además de la que se tiene por defecto.
+•	Se tiene que dar autorización.
+Librería para pdf en JavaScript jsPDF
+Con la biblioteca jsPDF es posible generar un archivo PDF, el cual se genera a partir de un lienzo que se debe pintar para generar el PDF, mediante funciones propias de la librería.
+Compatibilidad del navegador
+JsPDF funcionará en IE6 + *, Firefox 3, Chrome, Safari 3+, Opera. Para IE9.
+Soporte de codificación 
+ UTF-8 es no apoyada por defecto, sin embargo puede haber algunos plugins que le permite utilizar ella.
+Construcción manual del horario 
+Otra posible opción  es construir el horario mediante una lista insertándola en un Carousel de Bootstrap, para después insertar la API de Google Maps o  embeber  en el HTML el Google Maps esto con el fin de hacer uso de la ubicación del aula para el curso.
+Análisis  de informe de matrícula y propuestas 
+Bibliografía
+Bob Martin. (2016), The Principles of OOD, 11 de Agosto de 2016, de butunclebob sitio web: http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod .
+Bootstrap. (2016), Carousel carousel.js, 12 de Agosto de 2016, de Bootstrap sito web: http://getbootstrap.com/javascript/#carousel .
+Bootstrap. (2016), Collapse collapse.js, 12 de Agosto de 2016, de Bootstrap sito web: http://getbootstrap.com/javascript/#collapse .
+Bootstrap. (2016), Modals modals.js, 12 de Agosto de 2016, de Bootstrap sito web: http://getbootstrap.com/javascript/#modals .
+Bootstrap. (2016), ScrollSpy scrollspy.js, 12 de Agosto de 2016, de Bootstrap sito web: http://getbootstrap.com/javascript/#scrollspy .
+Google. (2016). Authentication using the Google APIs Client Library for JavaScript, 19 de Agosto de 2016,  de google sitio web: https://developers.google.com/api-client-library/javascript/features/authentication . 
+Google. (2016). Dispositivos, 22 de Agosto 2016, Analytics Todos los datos de sitios web Dispositivos 20160722-20160821.pdf.
+Google. (2016). Google Calendar API, 12 de Agosto de 2016,  de google sitio web: https://developers.google.com/google-apps/calendar/create-events. 
+Google. (2016). Navegador y SO, 22 de Agosto 2016, Analytics Todos los datos de sitios web Navegador y SO 20160722-20160821.pdf.
+Google. (2016). Navegador y SO, 22 de Agosto 2016, Analytics Todos los datos de sitios web Navegador y SO 20160723-20160822.pdf.
+Google. (2016). Navegador y SO, 22 de Agosto 2016, Analytics Todos los datos de sitios web Navegador y SO 20160724-20160823.
+Google. (2016). Páginas, 22 de Agosto 2016, Analytics Todos los datos de sitios web Páginas 20160723-20160822.pdf.
+Google. (2016).JavaScript Quickstart, 22 de Agosto de 2016,  de google sitio web:  https://developers.google.com/google-apps/calendar/quickstart/js .
+James Hall (2010-2016), jsPDF, 22 de Agosto 2016, de Github sitio web: https://github.com/MrRio/jsPDF .    
+Jo Rabin, mTLD Mobile Top Level Domain (dotMobi) Charles McCathieNevile, Opera Software [Early Drafts]. (2008). Mobile Web Best Practices 1.0. 17 de Agosto de 2016, de W3C Sitio web: https://www.w3.org/TR/mobile-bp .
+Opera. (2016). Opera version history, 24 de Agosto 2016, de Opera sitio web: http://www.opera.com/docs/history/ .
+W3C. (2015). JavaScript best practices. 11 de Agosto de 2016, de W3C sitio web: https://www.w3.org/wiki/JavaScript_best_practices .
+w3schools. (2016). Bootstrap Carousel, 24 de Agosto 2016, de w3school sitio web: http://www.w3schools.com/bootstrap/bootstrap_carousel.asp .
+w3schools. (2016). Bootstrap JS Collapse, 12 de Agosto de 2016, de w3schools sito web: http://www.w3schools.com/bootstrap/bootstrap_ref_js_collapse.asp .
+w3schools. (2016). Bootstrap Modal Plugin, 11 de Agosto de 2016, de w3schools sitio web: http://www.w3schools.com/bootstrap/bootstrap_modal.asp .
+w3schools. (2016). Bootstrap Scrollspy Plugin (Advanced), 12 de Agosto de 2016, de w3schools sito web: http://www.w3schools.com/bootstrap/bootstrap_scrollspy.asp .
+w3schools. (2016). Google Maps Controls, 24 de Agosto 2016, de w3school sitio web: http://www.w3schools.com/googleapi/google_maps_controls.asp .
+w3schools. (2016). How To Create a Modal Box, 11 de Agosto de 2016, de w3schools sitio web: http://www.w3schools.com/howto/howto_css_modals.asp .
+w3schools. (2016). W3.CSS Modal, 11 de agosto de 2016, de w3schools sitio web: http://www.w3schools.com/w3css/w3css_modal.asp .
